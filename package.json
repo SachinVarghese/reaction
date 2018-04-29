@@ -1,0 +1,41 @@
+{
+  "name": "reaction",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node .",
+    "build": "cross-env NODE_ENV=production webpack -p",
+    "profile": "cross-env NODE_ENV=production webpack --progress --profile",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server"
+  },
+  "dependencies": {
+    "express": "4.16.3",
+    "react": "16.3.2",
+    "react-dom": "16.3.2"
+  },
+  "devDependencies": {
+    "babel-core": "6.26.3",
+    "babel-loader": "7.1.4",
+    "babel-polyfill": "6.26.0",
+    "babel-preset-env": "1.6.1",
+    "babel-preset-react": "6.24.1",
+    "babel-preset-stage-1": "6.24.1",
+    "babel-register": "6.26.0",
+    "clean-webpack-plugin": "0.1.19",
+    "cross-env": "5.1.4",
+    "css-loader": "0.28.11",
+    "extract-text-webpack-plugin": "4.0.0-alpha.0",
+    "file-loader": "1.1.11",
+    "html-webpack-plugin": "3.2.0",
+    "material-ui": "1.0.0-beta.44",
+    "material-ui-icons": "1.0.0-beta.36",
+    "node-sass": "4.9.0",
+    "sass-loader": "7.0.1",
+    "style-loader": "0.21.0",
+    "webpack": "4.6.0",
+    "webpack-bundle-analyzer": "2.11.1",
+    "webpack-cli": "2.0.15",
+    "webpack-dev-server": "3.1.3"
+  }
+}
