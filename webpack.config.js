@@ -8,7 +8,7 @@ const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
   .BundleAnalyzerPlugin;
 const isProd = process.env.NODE_ENV === "production";
 const extractSass = new ExtractTextPlugin({
-  filename: "[name].[hash].css",
+  filename: "assets/[name].[hash].css",
   disable: !isProd
 });
 const bundleAnalyse = new BundleAnalyzerPlugin({
@@ -80,11 +80,11 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|gif|jpeg)$/,
-        use: ["file-loader"]
+        use: ["file-loader?name=assets/[name].[ext]"]
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
-        use: ["file-loader"]
+        use: ["file-loader?name=assets/[name].[ext]"]
       }
     ]
   }

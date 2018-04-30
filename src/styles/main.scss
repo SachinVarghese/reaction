@@ -1,5 +1,14 @@
 @import "./deps.scss";
 body {
-    background-color: aquamarine;
-    font-family: 'Roboto', sans-serif;
+  background-color: aquamarine;
+  font-family: "Roboto", sans-serif;
+}
+.fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 250ms ease-in;
 }

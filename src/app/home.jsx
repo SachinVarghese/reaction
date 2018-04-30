@@ -1,15 +1,13 @@
 import React from "react";
 import Button from "material-ui/Button";
-import "../styles/main.scss";
-import Icon from "../assets/me.jpeg";
-import { hot } from "react-hot-loader";
+import { Link } from "react-router-dom";
 
 const Main = () => {
   return (
     <Button variant="raised" color="primary">
-      Code Vitae!
+      <Link to="/next">Code Vitae</Link>
     </Button>
   );
 };
 
-export default hot(module)(Main);
+export default Main;
