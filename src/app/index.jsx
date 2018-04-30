@@ -1,8 +1,9 @@
-import 'babel-polyfill';
-import "../styles/main.scss";
-import Icon from '../assets/me.jpeg';
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Main from './main.jsx';
+import "babel-polyfill";
+import React from "react";
+import ReactDOM from "react-dom";
+import Main from "./main";
 
-ReactDOM.render(<Main />, document.getElementById('app'));
+const render = Component =>
+  ReactDOM.render(<Component />, document.getElementById("app"));
+
+render(Main);

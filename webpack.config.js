@@ -27,15 +27,24 @@ module.exports = {
     hot: true
   },
   entry: {
-    app: "./src/app/index.jsx"
+    app: "./src/app/index.jsx",
+    vendor: ["react", "react-dom"]
   },
   output: {
     filename: "[name].[hash].js",
-    path: path.resolve(__dirname, "dist")
+    path: path.resolve(__dirname, "dist"),
+    publicPath: "/"
   },
   optimization: {
     splitChunks: {
-      chunks: "all"
+      cacheGroups: {
+        vendor: {
+          chunks: "initial",
+          test: "vendor",
+          name: "vendor",
+          enforce: true
+        }
+      }
     }
   },
   plugins: [
@@ -59,12 +68,13 @@ module.exports = {
         test: /\.(jsx)$/,
         exclude: /node_modules/,
         include: path.resolve(__dirname, "src", "app"),
+        resolve: { extensions: [".js", ".jsx"] },
         use: ["babel-loader"]
       },
       {
         test: /\.scss$/,
         use: extractSass.extract({
-          use: ["css-loader", "sass-loader"],
+          use: ["css-loader", "postcss-loader", "sass-loader"],
           fallback: "style-loader"
         })
       },
