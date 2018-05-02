@@ -1,0 +1,11 @@
+[ignore]
+
+[include]
+./src/app
+[libs]
+
+[lints]
+
+[options]
+
+[strict]
