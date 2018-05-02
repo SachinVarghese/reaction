@@ -4,9 +4,11 @@ import { Link } from "react-router-dom";
 
 const Main = () => {
   return (
-    <Button variant="raised" color="primary">
-      <Link to="/next">Code Vitae</Link>
-    </Button>
+    <div className="home">
+      <Button variant="raised" color="primary">
+        <Link to="/next">Code Vitae</Link>
+      </Button>
+    </div>
   );
 };
 

@@ -14,7 +14,7 @@ import Next from "./next";
 
 const mainRouterTransition = ({ location }) => (
   <TransitionGroup>
-    <CSSTransition key={location.key} classNames="fade" timeout={300}>
+    <CSSTransition key={location.key} classNames="fade" timeout={1500}>
       <Switch location={location}>
         <Route exact path="/" component={Home} />
         <Route exact path="/next" component={Next} />
