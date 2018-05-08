@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 
 const Main = () => {
   return (
-    <div className="home">
+    <div className="full-size d-flex-center">
       <Button variant="raised" color="primary">
-        <Link to="/next">Code Vitae</Link>
+        <Link to="/login">Code Vitae</Link>
       </Button>
     </div>
   );

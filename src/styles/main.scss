@@ -1,26 +1,40 @@
 @import "./deps.scss";
+@import "./common.scss";
+
 body {
-  background-color: aquamarine;
+  height: 100vh;
+  width: 100vw;
+  margin: 0px;
   font-family: "Roboto", sans-serif;
 }
 .fade-enter {
   opacity: 0.1;
-  transition: opacity 1250ms ease-in;
+  height: 0%;
+  width: 0%;
+  transition: all 1250ms ease-in;
 }
 .fade-enter-active {
   opacity: 0.8;
-  transition: opacity 1250ms ease-in;
+  height: 100%;
+  width: 100%;
+  transition: all 1250ms ease-in;
 }
 
 .fade-enter-done {
   opacity: 1;
-  transition: opacity 1250ms ease-in;
+  height: 100%;
+  width: 100%;
+  transition: all 1250ms ease-in;
 }
 .fade-exit {
   opacity: 0.8;
-  transition: opacity 1250ms ease-in;
+  height: 100%;
+  width: 100%;
+  transition: all 1250ms ease-in;
 }
 .fade-exit-active {
   opacity: 0.1;
-  transition: opacity 1250ms ease-in;
+  height: 0%;
+  width: 0%;
+  transition: all 1250ms ease-in;
 }

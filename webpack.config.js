@@ -18,7 +18,7 @@ const bundleAnalyse = new BundleAnalyzerPlugin({
 
 module.exports = {
   mode: isProd ? process.env.NODE_ENV : "development",
-  devtool: isProd ? "source-map" : "inline-source-map",
+  devtool: isProd ? "" : "inline-source-map",
   devServer: {
     contentBase: "./dist",
     compress: true,
@@ -28,7 +28,9 @@ module.exports = {
   },
   entry: {
     app: "./src/app/index.jsx",
-    vendor: ["react", "react-dom"]
+    react: ["react", "react-dom", "react-router-dom", "react-transition-group"],
+    vendor: ["babel-polyfill", "material-ui"],
+    devSetup: ["react-hot-loader"]
   },
   output: {
     filename: "[name].[hash].js",
@@ -38,10 +40,22 @@ module.exports = {
   optimization: {
     splitChunks: {
       cacheGroups: {
+        react: {
+          chunks: "initial",
+          test: "react",
+          name: "react",
+          enforce: true
+        },
         vendor: {
           chunks: "initial",
           test: "vendor",
           name: "vendor",
+          enforce: true
+        },
+        devSetup: {
+          chunks: "initial",
+          test: "devSetup",
+          name: "devSetup",
           enforce: true
         }
       }

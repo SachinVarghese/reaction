@@ -10,14 +10,14 @@ import {
 import "../styles/main.scss";
 import Icon from "../assets/me.jpeg";
 import Home from "./home";
-import Next from "./next";
+import Login from "./login";
 
 const mainRouterTransition = ({ location }) => (
-  <TransitionGroup>
-    <CSSTransition key={location.key} classNames="fade" timeout={1500}>
+  <TransitionGroup className="full-size no-scroll">
+    <CSSTransition key={location.key} classNames="fade" timeout={2000}>
       <Switch location={location}>
         <Route exact path="/" component={Home} />
-        <Route exact path="/next" component={Next} />
+        <Route exact path="/login" component={Login} />
         <Route render={() => <div>Not Found</div>} />
       </Switch>
     </CSSTransition>
